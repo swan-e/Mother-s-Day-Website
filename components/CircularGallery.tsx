@@ -25,6 +25,7 @@ const loadTexture = (gl: any, src: string, onAspect: (aspect: number) => void) =
 
   const img = new Image();
   img.decoding = 'async';
+  img.crossOrigin = 'anonymous';
   img.src = src;
   img.onload = () => {
     texture.image = img;
