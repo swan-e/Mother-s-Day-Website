@@ -197,7 +197,7 @@ export default function CircularGallery({ images }: { images: string[] }) {
       window.removeEventListener('resize', resize);
       if (gl.canvas.parentNode) gl.canvas.parentNode.removeChild(gl.canvas);
     };
-  }, []);
+  }, [images]);
 
   return <div ref={containerRef} className="w-full h-full" />;
 }
