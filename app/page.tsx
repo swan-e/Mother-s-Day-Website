@@ -54,6 +54,7 @@ export default function Home() {
             </p>
 
             <input
+              id="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

@@ -42,6 +42,9 @@ export default function CircularGallery({ images }: { images: string[] }) {
   useEffect(() => {
     if (!containerRef.current) return;
 
+    const existing = containerRef.current.querySelector('canvas');
+    if (existing) existing.remove();
+
     const dpr = Math.min(window.devicePixelRatio, 2);
 
     const renderer = new Renderer({

@@ -24,9 +24,10 @@ const guestImages = [
   'https://res.cloudinary.com/dxlbpjptn/image/upload/v1778475302/samples/food/fish-vegetables.jpg'
 ];
 
-const ownerImages = Array.from({ length: MAX_PHOTOS }, (_, i) => 
-  process.env[`NEXT_PUBLIC_PHOTO_${i + 1}`]
-).filter(Boolean) as string[];
+// const ownerImages = Array.from({ length: MAX_PHOTOS }, (_, i) => 
+//   process.env[`NEXT_PUBLIC_PHOTO_${i + 1}`]
+// ).filter(Boolean) as string[];
+const ownerImages = (process.env.NEXT_PUBLIC_PHOTOS || '').split(',').filter(Boolean);
 
 export const preloadImages = () => {
   [...ownerImages, ...guestImages].forEach((src) => {
