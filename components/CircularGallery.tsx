@@ -9,7 +9,6 @@ import {
   Program,
   Texture,
 } from 'ogl';
-import { images } from './GalleryCanvas';
 import { useEffect, useRef } from 'react';
 
 const MESH_WIDTH = 1.8;
@@ -37,7 +36,7 @@ const loadTexture = (gl: any, src: string, onAspect: (aspect: number) => void) =
   return texture;
 };
 
-export default function CircularGallery() {
+export default function CircularGallery({ images }: { images: string[] }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
